@@ -107,13 +107,13 @@ class IPN(object):
             self.current_number_of_payments = IPN.process_int(request.POST.get('current_number_of_payments', None))
             self.current_total_amount_of_all_payments = IPN.process_money(request.POST.get('current_total_amount_of_all_payments', None))
             self.current_period_attempts = IPN.process_int(request.POST.get('current_period_attempts', None))
-            self.currency_code = Currency(request.POST.get('currency_code', None))
+            # self.currency_code = Currency(request.POST.get('currency_code', None))
             self.date_of_month = IPN.process_int(request.POST.get('date_of_month', None))
             self.day_of_week = IPN.process_int(request.POST.get('day_of_week', None), None)
             self.starting_date = IPN.process_date(request.POST.get('starting_date', None))
             self.ending_date = IPN.process_date(request.POST.get('ending_date', None))
-            self.max_total_amount_of_all_payments = Money(request.POST.get('max_total_amount_of_all_payments', None),
-                                                          request.POST.get('currency_code', None))
+            # self.max_total_amount_of_all_payments = Money(request.POST.get('max_total_amount_of_all_payments', None),
+            #                                               request.POST.get('currency_code', None))
             self.max_amount_per_payment = IPN.process_money(request.POST.get('max_amount_per_payment', None))
             self.max_number_of_payments = IPN.process_int(request.POST.get('max_number_of_payments', None))
             self.payment_period = request.POST.get('payment_period', None)
