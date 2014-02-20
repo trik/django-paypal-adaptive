@@ -7,7 +7,10 @@ from django.db import models, transaction
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.sites.models import Site
 from django.conf import settings as django_settings
-from django.utils import simplejson as json
+try:
+    import json
+except ImportError:
+    import django.utils.simplejson as json
 
 from djmoney.models.fields import MoneyField
 

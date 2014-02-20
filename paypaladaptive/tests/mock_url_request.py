@@ -1,4 +1,7 @@
-import json
+try:
+    import json
+except ImportError:
+    import django.utils.simplejson as json
 
 from django.core.urlresolvers import reverse
 from django.contrib.sites.models import Site

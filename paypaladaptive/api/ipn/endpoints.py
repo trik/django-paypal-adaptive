@@ -1,7 +1,10 @@
 import logging
 import urllib
 
-from django.utils import simplejson
+try:
+    import json
+except ImportError:
+    import django.utils.simplejson as json
 
 from dateutil.parser import parse
 from moneyed import Money
